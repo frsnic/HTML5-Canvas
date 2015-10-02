@@ -40,6 +40,10 @@ function change_color() {
 function fill_text() {
   b_context.fillText($("#text").val(), 5, 30);
 }
+function translate_canvas() {
+  b_context.translate($("#translate_x").val(), $("#translate_y").val());
+  draw_b();
+}
 </script>
 </head>
 <body onload="init()">
@@ -52,6 +56,11 @@ function fill_text() {
         <li><a onclick="clear_b()" href="#">Clear</a></li>
         <li>Color: <input id="color" onchange="change_color()"></li>
         <li>Text : <input id="text"  onchange="fill_text()"></li>
+        <li>Translate<br>
+          x: <input id="translate_x" onchange="translate_canvas()" value="0"><br>
+          y: <input id="translate_y" onchange="translate_canvas()" value="0">
+        </li>
+        <li></li>
       </ul>
     </div>
   </div>
