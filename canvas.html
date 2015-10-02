@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+var b_canvas;
+var b_context ;
+
+function init() {
+  b_canvas = document.getElementById("b");
+  b_context = b_canvas.getContext("2d");
+}
+
+function draw_b() {
+  b_context.fillRect(50, 25, 50, 50);
+  b_context.lineTo(500, 50);
+}
+
+function clear_b() {
+  b_context.clearRect(0, 0, 300, 300);
+}
+</script>
+</head>
+<style type='text/css'>
+#outer2   {
+  width: 700px;
+  margin: 0 auto;
+  background: white;
+          }
+#sidebar2 {
+  width: 350px;
+  float: left;
+}
+#content2 {
+  width: 350px;
+  float: left;
+}
+</style>
+<body onload="init()">
+  <div id='outer2'>
+    <div id='sidebar2'>
+      <canvas id="b" width="300" height="300" style="border:1px dotted;float:left" onclick="draw_b();"></canvas>
+    </div>
+    <div id='content2'>
+      <a onclick="clear_b()" href="#">Clear</a>
+    </div>
+  </div>
+</body>
+</html>
+
