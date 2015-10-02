@@ -32,6 +32,10 @@ function draw_b() {
 function clear_b() {
   b_context.clearRect(0, 0, 300, 300);
 }
+
+function change_color() {
+  b_context.fillStyle = $("#color").val();
+}
 </script>
 </head>
 <body onload="init()">
@@ -40,7 +44,10 @@ function clear_b() {
       <canvas id="b" width="300" height="300" style="border:1px dotted;float:left" onclick="draw_b();"></canvas>
     </div>
     <div style='  width: 350px; float: left;'>
-      <a onclick="clear_b()" href="#">Clear</a>
+      <ul>
+        <li><a onclick="clear_b()" href="#">Clear</a></li>
+        <li>Color: <input id="color" onchange="change_color()"></li>
+      </ul>
     </div>
   </div>
 </body>
