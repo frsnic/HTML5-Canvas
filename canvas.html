@@ -36,6 +36,10 @@ function clear_b() {
 function change_color() {
   b_context.fillStyle = $("#color").val();
 }
+
+function fill_text() {
+  b_context.fillText($("#text").val(), 5, 30);
+}
 </script>
 </head>
 <body onload="init()">
@@ -47,6 +51,7 @@ function change_color() {
       <ul>
         <li><a onclick="clear_b()" href="#">Clear</a></li>
         <li>Color: <input id="color" onchange="change_color()"></li>
+        <li>Text : <input id="text"  onchange="fill_text()"></li>
       </ul>
     </div>
   </div>
