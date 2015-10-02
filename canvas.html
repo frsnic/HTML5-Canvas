@@ -12,13 +12,20 @@ function init() {
 }
 
 function draw_b() {
+  // rectangle
   b_context.fillRect(50, 150, 50, 50);
   b_context.lineTo(500, 50);
 
+  // triangle
   b_context.beginPath();
   b_context.moveTo(0, 100);
   b_context.lineTo(100, 100);
   b_context.lineTo(100, 25);
+  b_context.fill();
+
+  // rotundity
+  b_context.beginPath();
+  b_context.arc(150, 150, 25, 0, 2 * Math.PI);
   b_context.fill();
 }
 
