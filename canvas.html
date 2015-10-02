@@ -30,6 +30,7 @@ function draw_b() {
 }
 
 function clear_b() {
+  b_context.translate(0, 0);
   b_context.clearRect(0, 0, 300, 300);
 }
 
@@ -40,9 +41,20 @@ function change_color() {
 function fill_text() {
   b_context.fillText($("#text").val(), 5, 30);
 }
+
 function translate_canvas() {
   b_context.translate($("#translate_x").val(), $("#translate_y").val());
-  draw_b();
+  b_context.restore();
+}
+
+function rotate_canvas() {
+  b_context.rotate(Math.PI * 2 / $("#angle").val());
+  b_context.restore();
+}
+
+function scale_canvas() {
+  b_context.scale($("#scale").val(), $("#scale").val());
+  b_context.restore();
 }
 </script>
 </head>
@@ -60,7 +72,9 @@ function translate_canvas() {
           x: <input id="translate_x" onchange="translate_canvas()" value="0"><br>
           y: <input id="translate_y" onchange="translate_canvas()" value="0">
         </li>
-        <li></li>
+        <li>Rotate: <input id="angle"  onchange="rotate_canvas()"></li>
+        <li>Scale: <input id="scale" onchange="scale_canvas()" value="0"><br>
+        </li>
       </ul>
     </div>
   </div>
